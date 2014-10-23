@@ -14,7 +14,7 @@ $ bash build.bash.sh
 $ './Hello C world!.exe'
 ```
 
-## 專案建構狀態
+## 專案目前的建構狀態
 [![Build Status](https://travis-ci.org/Vdragon/Hello_C_world_.svg)](https://travis-ci.org/Vdragon/Hello_C_world_)
 
 ## 智慧財產授權條款
