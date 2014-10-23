@@ -14,7 +14,7 @@ $ './Hello C world!.exe'
 ```
 
 ## 專案建構狀態
-[![Build Status](https://travis-ci.org/Vdragon/HelloCworld.svg)](https://travis-ci.org/Vdragon/HelloCworld)
+[![Build Status](https://travis-ci.org/Vdragon/Hello_C_world_.svg)](https://travis-ci.org/Vdragon/Hello_C_world_)
 
 ## 智慧財產授權條款
 Ｖ字龍放棄此專案的一切權利，將其釋出到公有領域(public domain)。
