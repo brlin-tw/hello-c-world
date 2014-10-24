@@ -1,2 +1,5 @@
 language: c
+compiler:
+  - gcc
+  - clang
 script: "bash build.bash.sh"
