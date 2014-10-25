@@ -1,4 +1,4 @@
-/* 以「/*（正斜線，米字符號）」與「米字符號，正斜線」包住的內容為Ｃ語言的多行註解（C89 標準 - LANGUAGE - LEXICAL ELEMENTS - Comments）
+/* 以「正斜線，米字符號」與「米字符號，正斜線」包住的內容為Ｃ語言的多行註解（C89 標準 - LANGUAGE - LEXICAL ELEMENTS - Comments）
    注意：C89 不支援 // 開頭的單行註解！ */
 
 /* 命令Ｃ程式語言工具鍊的預處理器(proprocessor)引入函式庫的標頭檔案(header file)，其包含該函式庫提供的函式(function)與常數(constant)等東西的宣告(declaration) */
