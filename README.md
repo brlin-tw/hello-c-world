@@ -2,6 +2,19 @@
 這是個最簡單的「Ｃ程式語言世界哈囉！」程式  
 [https://github.com/Vdragon/Hello_C_world_](https://github.com/Vdragon/Hello_C_world_)
 
+## 本目錄下的目錄與檔案說明
+### Source code/
+軟體的來源程式碼目錄
+
+### Built software(for raw configuration)/
+使用 buildSoftware.bash.sh 程式建構軟體時放置建構出來的軟體的目錄
+
+### README.md
+專案說明文件（您現在看到的內容就是從這個檔案來的）
+
+### buildSoftware.bash.sh
+軟體建構 GNU Bash 殼程式腳本程式
+
 ## 建構本軟體所需的軟體<br />Prerequisites for building this software
 ### GNU Bourne-Again 殼程式(bash)<br />GNU Bourne-Again SHell(bash)
 #### 相容於 Unix 的作業系統散佈版本

@@ -13,7 +13,7 @@ set -x
 
 # 呼叫 GCC，間接透過工具鍊將「Hello C world!.c」來源程式碼檔案建構為「Hello C world!.exe」目標程式碼組成的可執行檔
 # 因為檔案名稱中有對直譯器來說具其他意義的字元（此例為空白字元與驚嘆號），將檔案名稱用單引號(')括住避免直譯器去翻譯它
-gcc -std=iso9899:199409 -pedantic -Wall -v -o 'Hello C world!.exe' 'Hello C world!.c'
+gcc -std=iso9899:199409 -pedantic -Wall -v -o 'Built software(for traditional build configuration)/Hello C world!.exe' 'Source code/Hello C world!.c'
 
 # 回傳 0 結束狀態代碼， 0 代表正常結束程式
 exit 0
