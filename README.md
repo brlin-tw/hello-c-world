@@ -6,7 +6,7 @@
 ### Source code/
 軟體的來源程式碼目錄
 
-### Built software(for raw configuration)/
+### Built software(for traditional build configuration)/
 使用 buildSoftware.bash.sh 程式建構軟體時放置建構出來的軟體的目錄
 
 ### README.md
@@ -16,7 +16,7 @@
 軟體建構 GNU Bash 殼程式腳本程式
 
 ## 建構本軟體所需的軟體<br />Prerequisites for building this software
-### GNU Bourne-Again 殼程式(bash)<br />GNU Bourne-Again SHell(bash)
+### GNU Bourne-Again 殼程式(bash)<br />GNU Bourne-Again Shell(bash)
 #### 相容於 Unix 的作業系統散佈版本
 通常已經內建，如果沒有的話自該作業系統散佈版本的軟體管理系統中搜尋「bash」並安裝
 
