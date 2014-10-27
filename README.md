@@ -38,3 +38,5 @@ $ './Hello C world!.exe'
 ## 智慧財產授權條款
 Ｖ字龍放棄此專案的一切權利，將其釋出到公有領域(public domain)。
 
+## 有任何問題嗎？
+請在登入 GitHub 帳號後於本專案的[議題管理系統](https://github.com/Vdragon/Hello_C_world_/issues)建檔一個新的議題發問。
