@@ -7,13 +7,23 @@
 # 使用方式：
 # 	在命令列介面中切換當前工作目錄(current working directory)到「HelloCworld」專案來源程式碼根目錄下，然後執行下列命令：
 # 	$ bash build.bash.sh
+# 程式回傳代碼：
+# 	0 - 成功執行
+# 	1 - 發生錯誤
 
 # 啟用 bash 殼程式直譯器的偵錯功能，方便看到腳本程式呼叫了什麼命令
 set -x
 
+# 檢查當前工作目錄(current working directory)是否在正確
+if [ "$(basename "$(pwd)")" != "Traditional batch commands" ]; 
+	then
+		printf "您的當前工作目錄錯誤，您需要先切換到「Build solutions/Traditional batch commands/」目錄底下才能執行本程式。\n"
+		exit 1
+fi
+
 # 呼叫 GCC，間接透過工具鍊將「Hello C world!.c」來源程式碼檔案建構為「Hello C world!.exe」目標程式碼組成的可執行檔
 # 因為檔案名稱中有對直譯器來說具其他意義的字元（此例為空白字元與驚嘆號），將檔案名稱用單引號(')括住避免直譯器去翻譯它
-gcc -std=iso9899:199409 -pedantic -Wall -v -o 'Built software(for traditional build configuration)/Hello C world!.exe' 'Source code/Hello C world!.c'
+gcc -std=iso9899:199409 -pedantic -Wall -v -o 'Built software/Hello C world!.exe' '../../Source code/Hello C world!.c'
 
 # 回傳 0 結束狀態代碼， 0 代表正常結束程式
 exit 0
