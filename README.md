@@ -4,7 +4,7 @@
 
 ## 本目錄下的目錄與檔案說明
 ### Source code/
-軟體的來源程式碼目錄
+軟體的來源程式碼(source code)目錄
 
 ### Built software(for traditional build configuration)/
 使用 buildSoftware.bash.sh 程式建構軟體時放置建構出來的軟體的目錄
