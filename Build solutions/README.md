@@ -15,6 +15,6 @@
 ### Eclipse CDT 整合式開發環境
 
 ## 已知問題<br />Known issues
-請瀏覽本專案的問題追蹤系統。  
+請瀏覽本專案的議題追蹤系統。  
 Please browse our project's issue tracker.  
-[&lt;Issue tracker link&gt;](about:blank)
+[Issues · Vdragon/Hello_C_world_](https://github.com/Vdragon/Hello_C_world_/issues)
