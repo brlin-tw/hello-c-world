@@ -9,8 +9,8 @@
 	* Eclipse CDT 的專案檔案
 * .project
 	* Eclipse 的專案檔案
-* [Debug](Debug/)
-* [Release](Release/)
+* [Debug/](Debug/)
+* [Release/](Release/)
 
 ## 本目錄底下內容適用之授權條款<br />License of the content under this directory
 同上層目錄內容採用的授權條款
