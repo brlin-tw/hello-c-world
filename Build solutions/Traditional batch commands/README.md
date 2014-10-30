@@ -6,10 +6,10 @@
 同上層目錄內容採用的授權條款
 
 ## 本目錄下的項目說明<br />Description of the items under this directory
+### [Built software/](Built software/)
+
 ### README.md
 本說明文件
-
-### [Built software](Built software/)
 
 ### buildSoftware.bash.sh
 軟體建構 GNU Bash 殼程式腳本程式
