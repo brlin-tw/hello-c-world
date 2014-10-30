@@ -3,14 +3,14 @@
 這是 Eclipse CDT 軟體建構解決方案的目錄
 
 ## 本目錄下的項目說明<br />Description of the items under this directory
+* [Debug/](Debug/)
+* [Release/](Release/)
 * README.md
 	* 本說明檔案
 * .cproject
 	* Eclipse CDT 的專案檔案
 * .project
 	* Eclipse 的專案檔案
-* [Debug/](Debug/)
-* [Release/](Release/)
 
 ## 本目錄底下內容適用之授權條款<br />License of the content under this directory
 同上層目錄內容採用的授權條款
