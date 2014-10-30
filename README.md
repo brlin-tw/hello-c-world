@@ -2,6 +2,9 @@
 這是個最簡單的「Ｃ程式語言世界哈囉！」程式  
 [https://github.com/Vdragon/Hello_C_world_](https://github.com/Vdragon/Hello_C_world_)
 
+## 智慧財產授權條款
+Ｖ字龍放棄此專案的一切權利，將其釋出到公有領域(public domain)。
+
 ## 建構本軟體所需的軟體<br />Prerequisites for building this software
 ### GNU Bourne-Again 殼程式(bash)<br />GNU Bourne-Again SHell(bash)
 #### 相容於 Unix 的作業系統散佈版本
@@ -34,9 +37,6 @@ $ './Hello C world!.exe'
 
 ## 最新版本來源程式碼的建構狀態
 [![Build Status](https://travis-ci.org/Vdragon/Hello_C_world_.svg)](https://travis-ci.org/Vdragon/Hello_C_world_)
-
-## 智慧財產授權條款
-Ｖ字龍放棄此專案的一切權利，將其釋出到公有領域(public domain)。
 
 ## 有任何問題嗎？
 請在登入 GitHub 帳號後於本專案的[議題管理系統](https://github.com/Vdragon/Hello_C_world_/issues)建檔一個新的議題發問。
