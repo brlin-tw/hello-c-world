@@ -1,14 +1,12 @@
-# Build solutions/Code::Blocks/
+# Build solutions/Code::Blocks/Debug/
 ## 這是什麼？<br />What is this?
-這是「Code::Blocks 整合式開發環境」軟體建構解決方案的目錄
+這是 Code::Blocks 軟體建構解決方案的 Debug 建構目標目錄
 
 ## 本目錄下的項目說明<br />Description of the items under this directory
-* [Debug/](Debug/)
-* [Release/](Release/)
+* [Built software/](Built software/)
+* [Object code/](Object code/)
 * README.md
 	* 本說明檔案
-* Ｃ語言世界哈囉！(Hello C World!).cbp
-	* 此為 Code::Blocks 整合式開發環境的專案(project)檔案
 
 ## 本目錄底下內容適用之授權條款<br />License of the content under this directory
 同上層目錄內容採用的授權條款

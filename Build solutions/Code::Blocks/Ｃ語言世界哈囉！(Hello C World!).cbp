@@ -7,9 +7,9 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="Built software/$(TARGET_NAME)/$(PROJECT_NAME).exe" prefix_auto="0" extension_auto="0" />
-				<Option working_dir="Built software/$(TARGET_NAME)/" />
-				<Option object_output="Object code/$(TARGET_NAME)/" />
+				<Option output="$(TARGET_NAME)/Built software/$(PROJECT_NAME).exe" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="$(TARGET_NAME)/Built software/" />
+				<Option object_output="$(TARGET_NAME)/Object code/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -17,9 +17,9 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="Built software/$(TARGET_NAME)/$(PROJECT_NAME).exe" prefix_auto="0" extension_auto="0" />
-				<Option working_dir="Built software/$(TARGET_NAME)/" />
-				<Option object_output="Object code/$(TARGET_NAME)/" />
+				<Option output="$(TARGET_NAME)/Built software/$(PROJECT_NAME).exe" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="$(TARGET_NAME)/Built software/" />
+				<Option object_output="$(TARGET_NAME)/Object code/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
