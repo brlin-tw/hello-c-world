@@ -22,6 +22,8 @@
 
 ### [Geany 整合式開發環境](Geany/)（尚未實作）
 
+### [CodeLite 整合式開發環境](CodeLite/)（尚未實作）
+
 ## 已知問題<br />Known issues
 請瀏覽本專案的議題追蹤系統。  
 Please browse our project's issue tracker.  
