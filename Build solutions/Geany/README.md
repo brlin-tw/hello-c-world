@@ -5,6 +5,8 @@
 ## 本目錄下的項目說明<br />Description of the items under this directory
 * README.md
 	* 本說明檔案
+* Ｃ程式設計世界哈囉！(Hello_C_world!).geany
+	* Geany 整合式開發環境的專案檔案
 
 ## 本目錄底下內容適用之授權條款<br />License of the content under this directory
 同上層目錄內容採用的授權條款
