@@ -7,7 +7,7 @@
 * [Release/](Release/)
 * README.md
 	* 本說明檔案
-* Ｃ語言世界哈囉！(Hello C World!).cbp
+* Ｃ程式設計世界哈囉！(Hello C World!).cbp
 	* 此為 Code::Blocks 整合式開發環境的專案(project)檔案
 
 ## 本目錄底下內容適用之授權條款<br />License of the content under this directory

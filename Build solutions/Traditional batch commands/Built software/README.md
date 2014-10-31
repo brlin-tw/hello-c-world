@@ -5,8 +5,8 @@
 ## 本目錄下的項目說明<br />Description of the items under this directory
 * README.md
 	* 本說明文件
-* Hello C world!.exe
-	* 建構完成的「Ｃ語言世界哈囉！」應用程式（可執行檔(executable)）
+* Ｃ程式設計世界哈囉！(Hello_C_world!).exe
+	* 建構完成的「Ｃ程式設計世界哈囉！(Hello_C_world!)」應用程式（可執行檔(executable)）
 
 ## 本目錄底下內容適用之授權條款<br />License of the content under this directory
 同上層目錄內容採用的授權條款

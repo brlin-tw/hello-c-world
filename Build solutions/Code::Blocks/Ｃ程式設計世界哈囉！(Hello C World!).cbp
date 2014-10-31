@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Ｃ語言世界哈囉！(Hello C World!)" />
+		<Option title="Ｃ程式設計世界哈囉！(Hello C World!)" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
