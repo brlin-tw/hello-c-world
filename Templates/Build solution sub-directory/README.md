@@ -6,9 +6,9 @@
 同上層目錄內容採用的授權條款
 
 ## 本目錄下的項目說明<br />Description of the items under this directory
+* [Built software](Built software/)
 * README.md
 	* 本說明檔案
-* [Built software](Built software/)
 
 ## 如何用本軟體建構解決方案建構軟體？
 （尚未填寫）
