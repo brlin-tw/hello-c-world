@@ -9,6 +9,9 @@
 ### [Build solutions/](Build solutions/)
 軟體建構解決方案的目錄
 
+### [Templates/](Templates/)
+放置本專案使用的目錄或檔案範本的目錄
+
 ### [README.md](README.md)
 專案說明文件（您現在看到的內容就是從這個檔案來的）
 
