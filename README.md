@@ -3,13 +3,13 @@
 [https://github.com/Vdragon/Hello_C_world_](https://github.com/Vdragon/Hello_C_world_)
 
 ## 本目錄下的目錄與檔案說明
-### Source code/
+### [Source code/](Source code/)
 軟體的來源程式碼(source code)目錄
 
-### Build solutions/
+### [Build solutions/](Build solutions/)
 軟體建構解決方案的目錄
 
-### README.md
+### [README.md](README.md)
 專案說明文件（您現在看到的內容就是從這個檔案來的）
 
 ## 建構本軟體需要什麼軟體？
