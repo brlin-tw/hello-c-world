@@ -14,6 +14,8 @@
 
 ### [Eclipse CDT 整合式開發環境](Eclipse CDT/)
 
+### [KDevelop 整合式開發環境](KDevelop/)
+
 ### [CMake 軟體建構系統](Cmake/)（尚未實作）
 
 ### [Dev-C++ 整合式開發環境](Dev-C++/)（尚未實作）
