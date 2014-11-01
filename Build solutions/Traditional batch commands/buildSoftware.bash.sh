@@ -21,9 +21,24 @@ if [ "$(basename "$(pwd)")" != "Traditional batch commands" ];
 		exit 1
 fi
 
-# 呼叫 GCC，間接透過工具鍊將「Hello C world!.c」來源程式碼檔案建構為「Ｃ程式設計世界哈囉！(Hello_C_world!)」目標程式碼組成的可執行檔
-# 因為檔案名稱中有對直譯器來說具其他意義的字元（此例為空白字元與驚嘆號），將檔案名稱用單引號(')括住避免直譯器去翻譯它
-gcc -std=iso9899:199409 -pedantic -Wall -v -o 'Built software/Ｃ程式設計世界哈囉！(Hello_C_world!).exe' '../../Source code/Hello C world!.c'
+printf "開始進行軟體建構……\n"
+# 呼叫工具鍊(toolchain)將「Hello C world!.c」來源程式碼檔案建構為「Ｃ程式設計世界哈囉！(Hello_C_world!)」目標程式碼組成的可執行檔
+# 因為檔案名稱中有對直譯器來說具其他意義的字元（此例為空白字元與驚嘆號），將檔案名稱用單引號(')括住避免直譯器去解釋它
+
+## 前期處理階段
+printf "正在呼叫前期處理器(preprocessor)對來源程式碼進行前期處理(preprocess)……\n"
+gcc -E -o 'Files generated during building process/Hello C world!.i' '../../Source code/Hello C world!.c'
+
+## 編譯階段
+printf "正在呼叫編譯器將來源程式碼(source code)編譯(compile)為目標程式碼(object code)……\n"
+gcc -std=iso9899:199409 -pedantic -Wall -o 'Files generated during building process/Hello C world!.o' -c 'Files generated during building process/Hello C world!.i'
+
+## 連結階段
+printf "正在將目標程式碼(object code)連結(link)為可執行檔(executable)……\n"
+gcc -o 'Built software/Hello C world!.exe' 'Files generated during building process/Hello C world!.o'
+
+printf "軟體建構程序結束。\n"
+printf "如果沒有印出錯誤訊息代表軟體建構成功！\n"
 
 # 回傳 0 結束狀態代碼， 0 代表正常結束程式
 exit 0
