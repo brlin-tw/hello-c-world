@@ -40,7 +40,7 @@ set +x
 ## 連結階段
 printf "正在將目標程式碼(object code)連結(link)為可執行檔(executable)……\n"
 set -x
-gcc -o 'Built software/Hello C world!.exe' 'Files generated during building process/Hello C world!.o'
+gcc -o 'Built software/Ｃ程式設計世界哈囉！(Hello C world!).exe' 'Files generated during building process/Hello C world!.o'
 set +x
 
 printf "軟體建構程序結束。\n"
