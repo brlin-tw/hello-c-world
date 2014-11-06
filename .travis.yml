@@ -2,4 +2,7 @@ language: c
 compiler:
   - gcc
   - clang
-script: "cd 'Build solutions/Traditional batch commands/'; bash buildSoftware.bash.sh"
+script: 
+  - cd "Build solutions/Traditional batch commands/"
+  - bash buildSoftware.bash.sh
+  
