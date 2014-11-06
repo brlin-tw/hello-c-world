@@ -12,10 +12,10 @@
 ### [Files generated during building process/](Files generated during building process/)
 放置在軟體建構過程中產生的檔案的目錄
 
-### README.md
+### [README.md](README.md)
 本說明文件
 
-### buildSoftware.bash.sh
+### [buildSoftware.bash.sh](buildSoftware.bash.sh)
 軟體建構 GNU Bash 殼程式腳本程式
 
 ## 用本軟體建構解決方案建構軟體所需的軟體<br />Prerequisites for using this build solution to build software
