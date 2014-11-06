@@ -8,4 +8,3 @@ script:
 after_script:
   - cd ../../
   - './Build solutions/Traditional batch commands/Built software/Ｃ程式設計世界哈囉！(Hello C world!).exe'
-  
