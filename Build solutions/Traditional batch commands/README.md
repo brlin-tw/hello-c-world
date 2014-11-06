@@ -38,7 +38,7 @@ $ bash buildSoftware.bash.sh
 ## 如何執行建構出來的程式
 在命令列介面中切換當前工作目錄(current working directory)到「Ｃ程式設計世界哈囉！(Hello_C_world!)」專案來源程式碼根目錄下，然後執行下列命令：
 ```
-$ './Build solutions/Traditional batch commands/Build software/Ｃ程式設計世界哈囉！(Hello_C_world!).exe'
+$ './Build solutions/Traditional batch commands/Built software/Ｃ程式設計世界哈囉！(Hello C world!).exe'
 ```
 
 ## 已知問題<br />Known issues
