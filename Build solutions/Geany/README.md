@@ -3,9 +3,9 @@
 這是 Geany 軟體建構解決方案的目錄
 
 ## 本目錄下的項目說明<br />Description of the items under this directory
-* README.md
+* [README.md](README.md)
 	* 本說明檔案
-* Ｃ程式設計世界哈囉！(Hello_C_world!).geany
+* [Ｃ程式設計世界哈囉！(Hello_C_world!).geany](Ｃ程式設計世界哈囉！(Hello_C_world!).geany)
 	* Geany 整合式開發環境的專案檔案
 
 ## 本目錄底下內容適用之授權條款<br />License of the content under this directory

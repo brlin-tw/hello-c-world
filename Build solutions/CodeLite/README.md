@@ -6,11 +6,11 @@
 同上層目錄內容採用的授權條款
 
 ## 本目錄下的項目說明<br />Description of the items under this directory
-* Hello_C_world_.workspace
+* [Hello_C_world_.workspace](Hello_C_world_.workspace)
 	* CodeLite 的工作空間(workspace)檔案
-* Hello_C_world_.project
+* [Hello_C_world_.project](Hello_C_world_.project)
 	* CodeLite 的專案檔案
-* README.md
+* [README.md](README.md)
 	* 本說明檔案
 
 ## 如何用本軟體建構解決方案建構軟體？

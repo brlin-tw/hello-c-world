@@ -3,7 +3,7 @@
 這是 GNU Make 軟體建構解決方案的目錄
 
 ## 本目錄下的項目說明<br />Description of the items under this directory
-* README.md
+* [README.md](README.md)
 	* 本說明檔案
 
 ## 本目錄底下內容適用之授權條款<br />License of the content under this directory
