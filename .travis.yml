@@ -7,5 +7,5 @@ script:
   - bash buildSoftware.bash.sh
 after_script:
   - cd ../../
-  - './Build solutions/Traditional batch commands/Built software/Hello C world!.exe'
+  - './Build solutions/Traditional batch commands/Built software/Ｃ程式設計世界哈囉！(Hello C world!).exe'
   
