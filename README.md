@@ -15,6 +15,9 @@
 ### [README.md](README.md)
 專案說明文件（您現在看到的內容就是從這個檔案來的）
 
+### [.travis.yml](.travis.yml)
+[Travis CI continual integration 服務](http://travis-ci.org/)的設定檔，用來產生「最新版本來源程式碼的建構狀態」段落的資訊
+
 ## 建構本軟體需要什麼軟體？
 ### 一個相容 C89 標準的建構工具鍊(build toolchain)
 #### 相容於 Unix 的作業系統散佈版本
