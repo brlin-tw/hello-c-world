@@ -5,6 +5,8 @@
 ## 本目錄下的項目說明<br />Description of the items under this directory
 * [README.md](README.md)
 	* 本說明文件
+* [.gitignore](.gitignore)
+	* Git 版本控制系統版本追蹤忽略規則
 * [Ｃ程式設計世界哈囉！(Hello_C_world!).exe](Ｃ程式設計世界哈囉！(Hello_C_world!).exe)（此檔案要建構之後才會出現）
 	* 建構完成的「Ｃ程式設計世界哈囉！(Hello_C_world!)」應用程式（可執行檔(executable)）
 
