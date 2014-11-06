@@ -5,4 +5,7 @@ compiler:
 script: 
   - cd "Build solutions/Traditional batch commands/"
   - bash buildSoftware.bash.sh
+after_script:
+  - cd ../../
+  - "Build solutions/Traditional batch commands/Built software/Hello C world!.exe"
   
