@@ -11,6 +11,8 @@
 	* Eclipse CDT 的專案檔案
 * [.project](.project)
 	* Eclipse 的專案檔案
+* [.gitignore](.gitignore)
+	* Git 版本控制系統版本追蹤忽略規則
 
 ## 本目錄底下內容適用之授權條款<br />License of the content under this directory
 同上層目錄內容採用的授權條款
