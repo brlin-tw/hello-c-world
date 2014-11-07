@@ -3,7 +3,7 @@
 這是放置建構出來的目標程式碼的目錄
 
 ## 本目錄下的項目說明<br />Description of the items under this directory
-* README.md
+* [README.md](README.md)
 	* 本說明文件
 
 ## 本目錄底下內容適用之授權條款<br />License of the content under this directory
