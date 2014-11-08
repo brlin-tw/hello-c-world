@@ -1,0 +1,6 @@
+# Code::Blocks整合式開發環境排除規則
+# http://wiki.codeblocks.org/index.php?title=File_formats_description
+	#由專案自動產生的檔案
+*.layout
+*.depend
+*.cbTemp
