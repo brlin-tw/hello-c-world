@@ -30,15 +30,16 @@
 * [MinGW | Minimalist GNU for Windows 提供的 MSYS](http://goo.gl/362f)
 
 ## 如何用本軟體建構解決方案建構軟體？
-在命令列介面中切換當前工作目錄(current working directory)到「Hello C world!」專案來源程式碼根目錄下的「Build solutions/Traditional batch commands/」目錄，然後執行下列命令：
+1. 本軟體支援多種不同的 toolchain 建構軟體，請定義「CC」環境變數為該 toolchain 的命令（如果沒有定義的話預設將使用 GNU GCC 作為 toolchain）
+2. 在命令列介面中切換當前工作目錄(current working directory)到「Hello C world!」專案來源程式碼根目錄下的「Build solutions/Traditional batch commands/」目錄，然後執行下列命令：
 ```
 $ bash buildSoftware.bash.sh
 ```
 
 ## 如何執行建構出來的程式
-在命令列介面中切換當前工作目錄(current working directory)到「Ｃ程式設計世界哈囉！(Hello_C_world!)」專案來源程式碼根目錄下，然後執行下列命令：
+在命令列介面中切換當前工作目錄(current working directory)到「Ｃ程式設計世界哈囉！(Hello_C_world!)」專案來源程式碼根目錄下，依照「如何用本軟體建構解決方案建構軟體？」段落的說明設定好 CC 環境變數，然後執行下列命令：
 ```
-$ './Build solutions/Traditional batch commands/Built software/Ｃ程式設計世界哈囉！(Hello C world!).exe'
+$ bash -c '"./Build solutions/Traditional batch commands/Built software/Hello C world!.${CC}.exe"'
 ```
 
 ## 已知問題<br />Known issues

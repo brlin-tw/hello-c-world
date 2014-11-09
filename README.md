@@ -28,7 +28,7 @@
 ## 建構本軟體需要什麼軟體？
 ### 一個相容 C89 標準的建構工具鍊(build toolchain)
 #### 相容於 Unix 的作業系統散佈版本
-通常已經內建，如果沒有的話自該作業系統散佈版本的軟體管理系統中搜尋「gcc」並安裝
+通常已經內建，如果沒有的話自該作業系統散佈版本的軟體管理系統中搜尋「gcc」或「clang」並安裝
 
 #### Microsoft Windows 作業系統
 * [MinGW | Minimalist GNU for Windows 提供的 minGW](http://goo.gl/362f)
