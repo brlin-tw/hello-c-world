@@ -24,23 +24,29 @@ fi
 printf "開始進行軟體建構……\n"
 # 呼叫工具鍊(toolchain)將「Hello C world!.c」來源程式碼檔案建構為「Ｃ程式設計世界哈囉！(Hello_C_world!)」目標程式碼組成的可執行檔
 # 因為檔案名稱中有對直譯器來說具其他意義的字元（此例為空白字元與驚嘆號），將檔案名稱用單引號(')括住避免直譯器去解釋它
+## 決定使用的編譯器命令（要 cross-compile 的話需要用不同的編譯器命令）
+if [ "${CC}" == "" ]
+	then
+		printf "「CC」環境變數未定義，將使用原生的 GNU GCC 編譯器進行建構\n"
+		CC="gcc"
+fi
 
 ## 前期處理階段
 printf "正在呼叫前期處理器(preprocessor)對來源程式碼進行前期處理(preprocess)……\n"
 set -x
-gcc -E -o 'Files generated during building process/Hello C world!.i' '../../Source code/Hello C world!.c'
+${CC} -E -o 'Files generated during building process/Hello C world!.i' '../../Source code/Hello C world!.c'
 set +x
 
 ## 編譯階段
 printf "正在呼叫編譯器將來源程式碼(source code)編譯(compile)為目標程式碼(object code)……\n"
 set -x
-gcc -std=iso9899:199409 -pedantic -Wall -o 'Files generated during building process/Hello C world!.o' -c 'Files generated during building process/Hello C world!.i'
+${CC} -std=iso9899:199409 -pedantic -Wall -o 'Files generated during building process/Hello C world!.o' -c 'Files generated during building process/Hello C world!.i'
 set +x
 
 ## 連結階段
 printf "正在將目標程式碼(object code)連結(link)為可執行檔(executable)……\n"
 set -x
-gcc -o 'Built software/Hello C world!.exe' 'Files generated during building process/Hello C world!.o'
+${CC} -o 'Built software/Hello C world!.exe' 'Files generated during building process/Hello C world!.o'
 set +x
 
 printf "軟體建構程序結束。\n"
