@@ -34,19 +34,19 @@ fi
 ## 前期處理階段
 printf "正在呼叫前期處理器(preprocessor)對來源程式碼進行前期處理(preprocess)……\n"
 set -x
-${CC} -E -o 'Files generated during building process/Hello C world!.i' '../../Source code/Hello C world!.c'
+${CC} -E -o "Files generated during building process/Hello C world!.${CC}.i" '../../Source code/Hello C world!.c'
 set +x
 
 ## 編譯階段
 printf "正在呼叫編譯器將來源程式碼(source code)編譯(compile)為目標程式碼(object code)……\n"
 set -x
-${CC} -std=iso9899:199409 -pedantic -Wall -o 'Files generated during building process/Hello C world!.o' -c 'Files generated during building process/Hello C world!.i'
+${CC} -std=iso9899:199409 -pedantic -Wall -o "Files generated during building process/Hello C world!.${CC}.o" -c "Files generated during building process/Hello C world!.${CC}.i"
 set +x
 
 ## 連結階段
 printf "正在將目標程式碼(object code)連結(link)為可執行檔(executable)……\n"
 set -x
-${CC} -o 'Built software/Hello C world!.exe' 'Files generated during building process/Hello C world!.o'
+${CC} -o "Built software/Hello C world!.${CC}.exe" "Files generated during building process/Hello C world!.${CC}.o"
 set +x
 
 printf "軟體建構程序結束。\n"
