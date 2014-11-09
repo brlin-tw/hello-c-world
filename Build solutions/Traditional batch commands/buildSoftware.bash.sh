@@ -15,7 +15,7 @@
 # set -x
 
 # 檢查當前工作目錄(current working directory)是否在正確
-if [ "$(basename "$(pwd)")" != "Traditional batch commands" ]; 
+if [ "$(basename "$(pwd)")" != "Traditional batch commands" ] 
 	then
 		printf "您的當前工作目錄錯誤，您需要先切換到「Build solutions/Traditional batch commands/」目錄底下才能執行本程式。\n"
 		exit 1
