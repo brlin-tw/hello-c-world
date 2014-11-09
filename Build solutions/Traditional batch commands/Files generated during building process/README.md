@@ -5,9 +5,9 @@
 ## 本目錄下的項目說明<br />Description of the items under this directory
 * README.md
 	* 本說明文件
-* Hello C world!.i
+* Hello C world!.〈編譯器命令〉.i
 	* 來源程式碼經過前期處理(preprocess)後的結果
-* Hello C world!.o
+* Hello C world!.〈編譯器命令〉.o
 	* 編譯(compile)後產生的目標程式碼檔案
 
 ## 本目錄底下內容適用之授權條款<br />License of the content under this directory
