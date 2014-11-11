@@ -1,8 +1,7 @@
-# Resources/Translations/
-放置軟體介面翻譯資料的目錄
+# Resources/Translations/locale
 
 ## 本目錄下的項目說明<br />Explanation of items under this directory
-### [locale/](locale/)
+### [LC_MESSAGES/](LC_MESSAGES/)
 
 ### [README.md](README.md)
 本說明文件
