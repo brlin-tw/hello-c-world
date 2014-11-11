@@ -8,3 +8,5 @@ script:
 after_script:
   - cd ../../
   - bash -c '"./Build solutions/Traditional batch commands/Built software/Hello C world!.${CC}.exe"'
+  - bash -c 'LANGUAGE=en "./Build solutions/Traditional batch commands/Built software/Hello C world!.${CC}.exe"'
+  - bash -c 'LANGUAGE=zh_CN "./Build solutions/Traditional batch commands/Built software/Hello C world!.${CC}.exe"'

@@ -16,6 +16,9 @@
 ### [Templates/](Templates/)
 放置本專案使用的目錄或檔案範本的目錄
 
+### [Resources/](Resources/)
+放置軟體會用到的資源的目錄
+
 ### [README.md](README.md)
 專案說明文件（您現在看到的內容就是從這個檔案來的）
 
