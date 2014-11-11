@@ -1,0 +1,20 @@
+# Chinese(P.R.C. region) translation of "Ｃ程式設計世界哈囉！(Hello C World!)" software.
+# This work is licensed as the same license of "Ｃ程式設計世界哈囉！(Hello C World!)" project.
+# Vdragon <Vdragon.Taiwan@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Ｃ程式設計世界哈囉！(Hello C World!) 065e8b2a\n"
+"Report-Msgid-Bugs-To: https://github.com/Vdragon/Hello_C_world_/issues\n"
+"POT-Creation-Date: 2014-11-12 02:27+0800\n"
+"PO-Revision-Date: 2014-11-12 03:18+0800\n"
+"Last-Translator: Vdragon <Vdragon.Taiwan@gmail.com>\n"
+"Language-Team: Chinese (simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Source code/Hello C world!.c:94
+msgid "Ｃ程式設計世界哈囉！"
+msgstr "Ｃ程式设计世界哈啰！"
