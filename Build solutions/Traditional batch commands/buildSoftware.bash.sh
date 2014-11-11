@@ -5,8 +5,8 @@
 # buildSoftware.bash.sh - 軟體建構程式
 # 此程式會用 GNU GCC C 工具鏈(toolchain)將來源程式碼(HelloCworld.c)檔案建構為您的處理器架構的可執行檔(executable)(HelloCworld.exe)
 # 使用方式：
-# 	在命令列介面中切換當前工作目錄(current working directory)到「HelloCworld」專案來源程式碼根目錄下，然後執行下列命令：
-# 	$ bash build.bash.sh
+# 	在命令列介面中切換當前工作目錄(current working directory)到「Ｃ程式設計世界哈囉！(Hello C World!)」專案來源程式碼根目錄下的「Build solutions/Traditional batch commands/」目錄，然後執行下列命令：
+# 	$ bash buildSoftware.bash.sh
 # 程式回傳代碼：
 # 	0 - 成功執行
 # 	1 - 發生錯誤
