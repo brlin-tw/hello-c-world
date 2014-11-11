@@ -49,6 +49,11 @@ set -x
 ${CC} -o "Built software/Hello C world!.${CC}.exe" "Files generated during building process/Hello C world!.${CC}.o"
 set +x
 
+# 建構軟體界面翻譯
+cd ../../Resources/Translations
+printf "正在建構軟體界面翻譯……\n"
+bash buildTranslations.bash.sh
+
 printf "軟體建構程序結束。\n"
 printf "如果沒有印出錯誤訊息代表軟體建構成功！\n"
 
