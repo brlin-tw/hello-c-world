@@ -1,21 +1,21 @@
-# English translation of "Ｃ程式設計世界哈囉！(Hello C World!)" software.
+# <Language name> translation of "Ｃ程式設計世界哈囉！(Hello C World!)" software.
 # This work is licensed as the same license of "Ｃ程式設計世界哈囉！(Hello C World!)" project.
-# Ｖ字龍(Vdragon) <Vdragon.Taiwan@gmail.com>, 2014.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Ｃ程式設計世界哈囉！(Hello C World!) 065e8b2a\n"
 "Report-Msgid-Bugs-To: https://github.com/Vdragon/Hello_C_world_/issues\n"
 "POT-Creation-Date: 2014-11-12 02:27+0800\n"
-"PO-Revision-Date: 2014-11-12 02:46+0800\n"
-"Last-Translator: Ｖ字龍(Vdragon) <Vdragon.Taiwan@gmail.com>\n"
-"Language-Team: N/A <Vdragon.Taiwan@gmail.com>\n"
-"Language: en\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: N/A <https://github.com/Vdragon/Hello_C_world_/issues>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: Source code/Hello C world!.c:94
 msgid "Ｃ程式設計世界哈囉！"
-msgstr "Hello C world!"
+msgstr ""

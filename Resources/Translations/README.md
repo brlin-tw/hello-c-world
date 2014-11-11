@@ -7,3 +7,7 @@
 
 ### [README.md](README.md)
 本說明文件
+
+### [Ｃ程式設計世界哈囉！(Hello C World!).pot](Ｃ程式設計世界哈囉！(Hello C World!).pot)
+Gettext 翻譯範本
+
