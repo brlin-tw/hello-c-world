@@ -36,7 +36,7 @@
 #### Microsoft Windows 作業系統
 * [MinGW | Minimalist GNU for Windows 提供的 minGW](http://goo.gl/362f)
 
-### [GNU Gettext](https://www.gnu.org/software/gettext/) 的開發用部份
+### [GNU Gettext](https://www.gnu.org/software/gettext/) 的開發用檔案
 #### 相容於 Unix 的作業系統散佈版本
 通常已經內建，如果沒有的話自該作業系統散佈版本的軟體管理系統中搜尋「GNU C Library」並安裝其開發用部份的軟體包
 
@@ -47,6 +47,11 @@
 
 ## 如何建構本軟體
 本軟體支援多種軟體建構解決方案，敬請參考 [Build solutions/](Build solutions/) 的說明文件。
+
+## 執行本軟體需要什麼軟體？
+### 一個標準Ｃ函式庫
+
+### GNU Gettext 的共享函式庫
 
 ## 最新版本來源程式碼的建構狀態
 [![Build Status](https://travis-ci.org/Vdragon/Hello_C_world_.svg)](https://travis-ci.org/Vdragon/Hello_C_world_)
