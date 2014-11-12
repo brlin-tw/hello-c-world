@@ -36,6 +36,13 @@
 #### Microsoft Windows 作業系統
 * [MinGW | Minimalist GNU for Windows 提供的 minGW](http://goo.gl/362f)
 
+### [GNU Gettext](https://www.gnu.org/software/gettext/) 的開發用部份
+#### 相容於 Unix 的作業系統散佈版本
+通常已經內建，如果沒有的話自該作業系統散佈版本的軟體管理系統中搜尋「GNU C Library」並安裝其開發用部份的軟體包
+
+#### Microsoft Windows 作業系統
+請安裝合適的 Windows 移植版本
+
 其他所需的軟體請參考各軟體建構解決方案的說明文件
 
 ## 如何建構本軟體
