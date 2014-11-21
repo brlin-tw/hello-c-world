@@ -18,6 +18,9 @@
 ### [buildSoftware.bash.sh](buildSoftware.bash.sh)
 軟體建構 GNU Bash 殼程式腳本程式
 
+### [buildSoftware.cross-compile.Windows_32bit.bash.sh](buildSoftware.cross-compile.Windows_32bit.bash.sh)
+Script to build Windows 32-bit platform software on Unix-like operating system
+
 ## 用本軟體建構解決方案建構軟體所需的軟體<br />Prerequisites for using this build solution to build software
 ### GNU Bourne-Again 殼程式(bash)<br />GNU Bourne-Again Shell(bash)
 #### 相容於 Unix 的作業系統散佈版本
