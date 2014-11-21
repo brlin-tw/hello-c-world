@@ -25,7 +25,6 @@ printf "正在建構軟體界面翻譯……\n"
 
 set -x
 msgfmt --check --statistics  --verbose 'en/LC_MESSAGES/Ｃ程式設計世界哈囉！(Hello C World!).po' --output-file='en/LC_MESSAGES/Ｃ程式設計世界哈囉！(Hello C World!).mo'
-printf "正在建構軟體界面翻譯……\n"
 msgfmt --check --statistics  --verbose 'zh_CN/LC_MESSAGES/Ｃ程式設計世界哈囉！(Hello C World!).po' --output-file='zh_CN/LC_MESSAGES/Ｃ程式設計世界哈囉！(Hello C World!).mo'
 set +x
 
