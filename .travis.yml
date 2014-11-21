@@ -9,7 +9,8 @@ script:
   - bash buildSoftware.bash.sh
   - bash buildSoftware.cross-compile.Windows_32bit.bash.sh
 after_script:
-  - cd ../../
+  - cd ../..
+  - pwd
   - bash -c 'LANGUAGE=zh_TW "./Build solutions/Traditional batch commands/Built software/Hello C world!.${CC}.exe"'
   - bash -c 'LANGUAGE=en "./Build solutions/Traditional batch commands/Built software/Hello C world!.${CC}.exe"'
   - bash -c 'LANGUAGE=zh_CN "./Build solutions/Traditional batch commands/Built software/Hello C world!.${CC}.exe"'
