@@ -34,7 +34,7 @@ fi
 ## 前期處理階段
 printf "正在呼叫前期處理器(preprocessor)對來源程式碼進行前期處理(preprocess)……\n"
 set -x
-${CC} -E -o "Files generated during building process/Hello C world!.${CC}.i" '../../Source code/Hello C world!.c'
+${CC} -E -DNDEBUG -o "Files generated during building process/Hello C world!.${CC}.i" '../../Source code/Hello C world!.c'
 set +x
 
 ## 編譯階段
