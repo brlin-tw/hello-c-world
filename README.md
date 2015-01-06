@@ -1,7 +1,6 @@
 # Ｃ程式設計世界哈囉！<br />Hello C world!
-這是個最簡單的「Ｃ程式設計世界哈囉！」程式  
-[https://github.com/Vdragon/Hello_C_world_](https://github.com/Vdragon/Hello_C_world_)
-
+<https://github.com/Vdragon/Hello_C_world_>  
+這是個最簡單的「Ｃ程式設計世界哈囉！」程式
 
 ## 智慧財產授權條款
 Ｖ字龍放棄此專案的一切權利，將其釋出到公有領域(public domain)。
