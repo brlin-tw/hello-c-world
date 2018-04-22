@@ -1,0 +1,36 @@
+name: hello-c-world
+version: '0.0.0-git'
+summary: An experimental C-based software project
+description: This is a project the experiment methods of managing a C language software project.
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+apps:
+  hello-c-world:
+    command: usr/bin/Hello\ C\ world!.gcc.exe
+
+parts:
+  main:
+    plugin: dump
+    source: ../..
+    build-packages: [gettext]
+    organize:
+      usr/bin/Resources/: snap/bin/Resources/
+    filesets:
+      executables: [usr/bin/Hello C world!.gcc.exe]
+      localizations: [snap/bin/Resources/Translations/*]
+    build: |
+      cd "Build solutions/Traditional batch commands"
+      ./buildSoftware.bash.sh
+      cd -
+    install: |
+      mkdir --parents "$SNAPCRAFT_PART_INSTALL/usr/bin"
+      cp "Build solutions/Traditional batch commands/Built software/Hello C world!.gcc.exe" "$SNAPCRAFT_PART_INSTALL/usr/bin"
+      cp --recursive Resources "$SNAPCRAFT_PART_INSTALL/usr/bin"
+    stage:
+      - $executables
+      - $localizations
+    prime:
+      - $executables
+      - $localizations
