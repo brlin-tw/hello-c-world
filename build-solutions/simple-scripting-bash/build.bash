@@ -84,9 +84,10 @@ init(){
 
 	printf --\
 		'Build finished.\n'
+	# COMPATIBILITY: --relative-to is not yet provided by the realpath command from Ubuntu 14.04
 	printf --\
 		'The built executable is at "%s".\n'\
-		"$(realpath --strip --relative-to="${PWD}" "${exe_dir}")"
+		"${exe_dir}"
 	exit 0
 }; declare -fr init
 
