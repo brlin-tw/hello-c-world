@@ -22,6 +22,7 @@ The default branch is `realistic`, which is the currently recommended level for 
 * The build system doesn't allow spaces in filenames/paths
 * The build system is not non-ASCII friendly
 * The I18N toolkit only allows English strings in source code.
+* Only use undercase alphabets and dashes(`-`) as filenames/path components, for command-line autocomplete friendliness
 
 ##### Friendliness
 
