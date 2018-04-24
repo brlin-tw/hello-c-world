@@ -92,7 +92,7 @@ install:
 #### https://docs.travis-ci.com/user/installing-dependencies/#Installing-Projects-from-Source
 
 ### Preparation before building?
-before_script: true
+before_script:
 - ./"continuous-integration/gnu-bash-automatic-checking-program-for-git-projects/GNU Bash Automatic Checking Program for Git Projects.bash"
 - yamllint .travis.yml
 
