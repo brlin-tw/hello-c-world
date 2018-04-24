@@ -49,6 +49,7 @@ init(){
 	fi
 
 	# Read where is the project's root directory
+	# shellcheck source=/dev/null
 	source "${RUNTIME_EXECUTABLE_DIRECTORY}/TO_PROJECT_ROOT_DIR.source.bash"
 
 	local project_root_dir;
