@@ -90,7 +90,7 @@ before_script: true
 script:
 - ./build-solutions/simple-scripting-bash/build.bash
 - ./build-solutions/simple-scripting-bash/install.bash --prefix install
-- ./install/hello-c-world
+- ./install/bin/hello-c-world
 
 ### You can remove files that are not useful for caching here
 before_cache: true
