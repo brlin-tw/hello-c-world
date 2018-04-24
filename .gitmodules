@@ -1,0 +1,6 @@
+[submodule "continuous-integration/utilities-for-travis-ci"]
+	path = continuous-integration/utilities-for-travis-ci
+	url = http://github.com/Lin-Buo-Ren/Utilities-for-Travis-CI
+[submodule "continuous-integration/gnu-bash-automatic-checking-program-for-git-projects"]
+	path = continuous-integration/gnu-bash-automatic-checking-program-for-git-projects
+	url = https://github.com/Lin-Buo-Ren/GNU-Bash-Automatic-Checking-Program-for-Git-Projects

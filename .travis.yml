@@ -75,16 +75,26 @@ before_install: true
 
 ### Install/Setup any required dependencies used in continuous integration
 ### https://docs.travis-ci.com/user/installing-dependencies/
-install: true
-#### Traditional package installing(requires VM build environment)
-#- sudo apt-get install
+install:
+# Install a custom version of shellcheck instead of Travis CI's default
+# https://github.com/koalaman/shellcheck#travis-ci
+- scversion="stable" # or "v0.4.7", or "latest"
+- wget "https://storage.googleapis.com/shellcheck/shellcheck-$scversion.linux.x86_64.tar.xz"
+- tar --xz -xvf "shellcheck-$scversion.linux.x86_64.tar.xz"
+- PATH="${PWD}/shellcheck-$scversion:${PATH}"
+- shellcheck --version
+
+# Install yamllint
+- ./"continuous-integration/utilities-for-travis-ci/Setup yamllint in Ubuntu lesser than 16.04.bash"
+- PATH="${HOME}/.local/bin:${PATH}"
 
 #### Sometimes dependencies needs to be build from source code and install/setup to use it
 #### https://docs.travis-ci.com/user/installing-dependencies/#Installing-Projects-from-Source
 
 ### Preparation before building?
 before_script: true
-#- ./prepare-building
+- ./"continuous-integration/gnu-bash-automatic-checking-program-for-git-projects/GNU Bash Automatic Checking Program for Git Projects.bash"
+- yamllint .travis.yml
 
 ### Put your build scripts here
 script:
