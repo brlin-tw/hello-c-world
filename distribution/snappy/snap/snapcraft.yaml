@@ -1,0 +1,27 @@
+name: hello-c-world
+version: '0.0.0-git'
+summary: An example C software project to experiment coding methodologies
+description: |
+  Refer the project site for more information:
+  https://github.com/Lin-Buo-Ren/hello-c-world
+
+grade: devel
+confinement: strict
+
+parts:
+  hello-c-world:
+    plugin: dump
+    source: ../..
+    override-build: |
+      ./build-solutions/simple-scripting-bash/build.bash
+      ./build-solutions/simple-scripting-bash/install.bash --prefix ../install
+    filesets:
+      executables: [bin/hello-c-world]
+    stage:
+      - $executables
+    prime:
+      - $executables
+
+apps:
+  hello-c-world:
+    command: hello-c-world
