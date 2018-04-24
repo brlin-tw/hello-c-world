@@ -89,6 +89,8 @@ before_script: true
 ### Put your build scripts here
 script:
 - ./build-solutions/simple-scripting-bash/build.bash
+- ./build-solutions/simple-scripting-bash/install.bash --prefix install
+- ./install/hello-c-world
 
 ### You can remove files that are not useful for caching here
 before_cache: true
