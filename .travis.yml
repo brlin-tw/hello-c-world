@@ -107,6 +107,7 @@ before_cache: true
 cache:
   directories:
   - "${HOME}/Software"
+  - "${HOME}/.local/bin"
 
 ### Commands if build phase fails
 after_failure: true
