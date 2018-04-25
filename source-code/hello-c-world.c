@@ -6,7 +6,7 @@
 /* Software global configuration */
 #include "config.h"
 
-/* For printf(3) */
+/* For puts(3) */
 #include <stdio.h>
 
 /* For EXIT_SUCCESS constant */
@@ -36,7 +36,7 @@ int main(int argc, char** argv){
 	/* --- */
 
 	/* Print greeting Message */
-	printf(_("Hello C world!\n"));
+	puts(_("Hello C world!"));
 
 	/* --- */
 
