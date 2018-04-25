@@ -1,7 +1,9 @@
 # Hello C World
 
 An example C software project to experiment coding methodologies
-<https://github.com/Lin-Buo-Ren/hello-c-world>
+<https://github.com/Lin-Buo-Ren/hello-c-world>  
+
+[![Continuous Integration Build Status](https://travis-ci.org/Lin-Buo-Ren/hello-c-world.svg?branch=realistic)](https://travis-ci.org/Lin-Buo-Ren/hello-c-world)
 
 ## Licensing
 
