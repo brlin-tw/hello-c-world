@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-declare -r PROGRAM_DESCRIPTION='Extract Translatable Strings from Program Sources'
-declare -r PROGRAM_COPYRIGHT_DECLARATION='林博仁(Buo-ren, Lin) et. al. © 2018'
+# Extract Translatable Strings from Program Sources
+# 林博仁(Buo-ren, Lin) et. al. © 2018
 
 ## Makes debuggers' life easier - Unofficial Bash Strict Mode
 ## BASHDOC: Shell Builtin Commands - Modifying Shell Behavior - The Set Builtin
