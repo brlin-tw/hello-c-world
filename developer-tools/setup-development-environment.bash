@@ -93,7 +93,8 @@ init(){
 	cd "${project_root_directory}"
 
 	printf -- \
-		'%s: Setup Git submodules...\n'
+		'%s: Setup Git submodules...\n' \
+		"${RUNTIME_EXECUTABLE_NAME}"
 	git submodule init \
 		'linters/gnu-bash-automatic-checking-program-for-git-projects' \
 		'developer-tools/git-precommit-hook-for-gnu-bash-projects'
