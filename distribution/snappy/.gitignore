@@ -10,3 +10,6 @@
 
 ## Seemingly unneeded folder, don't track it for now
 /snap/.snapcraft/
+
+## Automatically generated source tarball
+*.tar.bz2
