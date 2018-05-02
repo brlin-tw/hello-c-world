@@ -4,9 +4,9 @@
 # http://yaml.org/
 # This file is based on Configuration Templates for Travis CI
 # https://github.com/Lin-Buo-Ren/Configuration-Templates-for-Travis-CI
----
 ## Project-specific settings
 ### Main programming language used in the project
+### https://docs.travis-ci.com/user/languages
 language: c
 
 ### Git related settings
@@ -16,7 +16,7 @@ git:
   depth: 3
   # Whether or not to clone the submodules
   # https://docs.travis-ci.com/user/customizing-the-build/#Git-Submodules
-  submodule: true
+  submodules: false
   # Whether to download Git Large File Storage assets
   # https://docs.travis-ci.com/user/customizing-the-build/#Git-LFS-Skip-Smudge
   lfs_skip_smudge: false
@@ -35,6 +35,15 @@ sudo: false
 
 ### Selection of ubuntu release for build environment
 dist: trusty
+
+### Services pre-installed in the CI environment to start up
+### https://docs.travis-ci.com/user/database-setup/#Starting-Services
+#services:
+#- mysql
+
+## The Build Lifecycle
+## https://docs.travis-ci.com/user/customizing-the-build/#The-Build-Lifecycle
+## NOTE: Enable each phases by removing the `true` command after each key's colon
 
 ### Addons
 addons:
@@ -56,22 +65,10 @@ addons:
   #hosts: true
   #- mysite.com
 
-### Services pre-installed in the CI environment to start up
-### https://docs.travis-ci.com/user/database-setup/#Starting-Services
-#services:
-#- mysql
-
-## Build Cycle Phases
-## NOTE: Enable each phases by removing the `true` command after it
-### Run commands before install phase
-before_install: true
-# Configure any third-party software sources(requires VM build environment)
-#- sudo add-apt-repository universe
-#- sudo add-apt-repository ppa:libreoffice/ppa
-
-# Update package cache if package installing is required(requires VM build environment)
-# https://docs.travis-ci.com/user/installing-dependencies/#Installing-Packages-from-a-custom-APT-repository
-#- sudo apt-get -qq update
+### You can run custom commands before the installation step
+before_install:
+- git submodule init continuous-integration/utilities-for-travis-ci linters/gnu-bash-automatic-checking-program-for-git-projects
+- git submodule update --depth=30
 
 ### Install/Setup any required dependencies used in continuous integration
 ### https://docs.travis-ci.com/user/installing-dependencies/
@@ -84,22 +81,20 @@ install:
 # Install yamllint
 - ./"continuous-integration/utilities-for-travis-ci/Setup yamllint in Ubuntu lesser than 16.04.bash"
 - PATH="${HOME}/.local/bin:${PATH}"
+- yamllint --version
 
-#### Sometimes dependencies needs to be build from source code and install/setup to use it
-#### https://docs.travis-ci.com/user/installing-dependencies/#Installing-Projects-from-Source
-
-### Preparation before building?
+### You can run custom commands before the script/build step
 before_script:
 - ./"linters/gnu-bash-automatic-checking-program-for-git-projects/GNU Bash Automatic Checking Program for Git Projects.bash"
 - yamllint .travis.yml
 
-### Put your build scripts here
+### Put your build and test scripts here
 script:
 - ./build-solutions/simple-scripting-bash/build.bash
 - ./build-solutions/simple-scripting-bash/install.bash --prefix install
 - ./install/bin/hello-c-world
 
-### You can remove files that are not useful for caching here
+### You can remove files that are not needed for caching here
 before_cache: true
 #- rm $HOME/.cabal/logs/build.log
 
@@ -115,6 +110,7 @@ after_failure: true
 ### Commands if build phase successes
 after_success: true
 
+### You can run custom commands before the deploy step
 before_deploy: true
 
 ### Software deployment phase
@@ -129,6 +125,8 @@ before_deploy: true
        #branch: master
        #tags: true
 
+### You can run custom commands after the deploy step
 after_deploy: true
 
+### You can run custom commands after everything is done
 after_script: true
