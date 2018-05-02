@@ -1,0 +1,49 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hello-c-world 0.0.0-git\n"
+"Report-Msgid-Bugs-To: https://github.com/Lin-Buo-Ren/hello-c-world/issues\n"
+"POT-Creation-Date: 2018-05-02 21:55+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: source-code/hello-c-world.c:39
+msgid "Hello C world!"
+msgstr ""
+
+#: source-code/hello-c-world.c:48
+#, c-format
+msgid "The \"%s\" application\n"
+msgstr ""
+
+#: source-code/hello-c-world.c:51
+#, c-format
+msgid "Written by %s, et. al..\n"
+msgstr ""
+
+#. TRANSLATORS: This is a proper name.  See the gettext
+#. manual, section Names.  Note this is actually a non-ASCII
+#. name: The first name, "博仁" is (with Unicode escapes)
+#. "\u535A\u4EC1" or (with HTML entities) "&#x535a;&#x4ec1;".
+#. Pronunciation is like "博(buo)-仁(ren), 林(Lin)".
+#: source-code/hello-c-world.c:57
+msgid "林博仁(Buo-ren, Lin)"
+msgstr ""
+
+#. TRANSLATORS: The placeholder indicates the bug-reporting address
+#. for this package.  Please add _another line_ saying
+#. "Report translation bugs to <...>\n" with the address for translation
+#. bugs (typically your translation team's web or email address).
+#: source-code/hello-c-world.c:64
+#, c-format
+msgid "Report bugs to <%s>.\n"
+msgstr ""
