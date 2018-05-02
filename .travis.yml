@@ -90,7 +90,7 @@ install:
 
 ### Preparation before building?
 before_script:
-- ./"continuous-integration/gnu-bash-automatic-checking-program-for-git-projects/GNU Bash Automatic Checking Program for Git Projects.bash"
+- ./"linters/gnu-bash-automatic-checking-program-for-git-projects/GNU Bash Automatic Checking Program for Git Projects.bash"
 - yamllint .travis.yml
 
 ### Put your build scripts here
