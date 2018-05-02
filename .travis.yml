@@ -99,7 +99,9 @@ before_cache: true
 #- rm $HOME/.cabal/logs/build.log
 
 ### Caches non-variating contents to speed up build
+### https://docs.travis-ci.com/user/caching
 cache:
+  pip: true
   directories:
   - "${HOME}/Software"
 
