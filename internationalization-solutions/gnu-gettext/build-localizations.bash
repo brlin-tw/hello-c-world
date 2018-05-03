@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script to build the software
+# Build localization data into machine usable form
 # 林博仁 © 2018
 
 ## Makes debuggers' life easier - Unofficial Bash Strict Mode
@@ -17,7 +17,6 @@ declare\
 for required_command in \
 	basename \
 	dirname \
-	gcc \
 	realpath; do
 	if ! command -v "${required_command}" &>/dev/null; then
 		runtime_dependency_checking_result=fail
@@ -27,9 +26,6 @@ for required_command in \
 			|dirname \
 			|realpath)
 				required_software='GNU Coreutils'
-				;;
-			gcc)
-				required_software='GCC, the GNU Compiler Collection'
 				;;
 			*)
 				required_software="${required_command}"
@@ -85,45 +81,24 @@ init(){
 		exit 1
 	fi
 
-	# Read where is the project's root directory
-	# shellcheck source=/dev/null
-	source "${RUNTIME_EXECUTABLE_DIRECTORY}/TO_PROJECT_ROOT_DIR.source.bash"
+	pushd "${RUNTIME_EXECUTABLE_DIRECTORY}/localization" >/dev/null
+	for po_file in *.po; do
+		mo_filename="$(
+				basename \
+					--suffix=.po \
+					"${po_file}"
+		).mo"
 
-	declare project_root_dir; project_root_dir="$(realpath "${RUNTIME_EXECUTABLE_DIRECTORY}/${TO_PROJECT_ROOT_DIR}")"
-
-	declare -r exe_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/executables"
-	declare -r object_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/object-code"
-	declare -r src_dir="${project_root_dir}/source-code"
-	declare -r gettext_dir="${project_root_dir}/internationalization-solutions/gnu-gettext"
-
-	# Compile source code to object code
-	printf --\
-		'%s\n'\
-		'Compiling...'
-	gcc\
-		-c\
-		-o "${object_dir}/hello-c-world.o"\
-		"${src_dir}/hello-c-world.c"
-
-	# Link executable
-	printf --\
-		'%s\n'\
-		'Linking...'
-	gcc\
-		-o "${exe_dir}/hello-c-world"\
-		"${object_dir}/hello-c-world.o"
-
-	printf --\
-		'%s\n' \
-		'Building localization...'
-	"${gettext_dir}/build-localizations.bash"
-
-	printf --\
-		'Build finished.\n'
-	# COMPATIBILITY: --relative-to is not yet provided by the realpath command from Ubuntu 14.04
-	printf --\
-		'The built executable is at "%s".\n'\
-		"${exe_dir}"
+		printf -- \
+			'Building %s...\n' \
+			"${po_file}"
+		msgfmt \
+			--check \
+			--verbose \
+			--output-file="${mo_filename}" \
+			"${po_file}"
+	done
+	popd >/dev/null
 	exit 0
 }; declare -fr init
 
