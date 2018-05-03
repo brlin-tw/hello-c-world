@@ -1,0 +1,10 @@
+# Version Tracking Ignore Rules for Git VCS
+# https://git-scm.com/docs/gitignore
+
+## Don't track anything except README
+*
+.*
+!/README.markdown
+
+## Do track Git files
+!/.git*
