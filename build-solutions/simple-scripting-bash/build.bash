@@ -128,10 +128,22 @@ init(){
 }; declare -fr init
 
 print_help(){
-	printf \
-		'Currently no help messages are available for this program\n' \
-		1>&2
-	return 0
+	# Backticks in help message is Markdown's <code> markup
+	# shellcheck disable=SC2016
+	{
+		printf '# Help Information for %s #\n' \
+			"${RUNTIME_COMMANDLINE_BASECOMMAND}"
+		printf '## SYNOPSIS ##\n'
+		printf '* `"%s" _command-line_options_`\n\n' \
+			"${RUNTIME_COMMANDLINE_BASECOMMAND}"
+
+		printf '## COMMAND-LINE OPTIONS ##\n'
+		printf '### `-h` / `--help` ###\n'
+		printf 'Print this message\n\n'
+
+		printf '### `-d` / `--debug` ###\n'
+		printf 'Enable script debugging\n\n'
+	}
 }; declare -fr print_help;
 
 process_commandline_arguments() {
