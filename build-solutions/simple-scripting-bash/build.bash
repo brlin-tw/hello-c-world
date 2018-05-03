@@ -129,8 +129,8 @@ init(){
 	printf -- \
 		'%s: Linking executable...\n' \
 		"${RUNTIME_EXECUTABLE_NAME}"
-	gcc\
-		-o "${exe_dir}/hello-c-world"\
+	gcc \
+		-o "${exe_dir}/hello-c-world" \
 		"${object_dir}/hello-c-world.o"
 
 	printf -- \
