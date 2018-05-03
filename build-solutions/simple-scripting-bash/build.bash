@@ -108,7 +108,7 @@ init(){
 		"${src_dir}/hello-c-world.c"
 
 	# Compile preprocessed source code to assembly code
-	printf --\
+	printf -- \
 		'%s: Compiling assembly code...\n' \
 		"${RUNTIME_EXECUTABLE_NAME}"
 	gcc \
@@ -117,7 +117,7 @@ init(){
 		"${preprocessed_src_dir}/hello-c-world.c"
 
 	# Assemply assembly code to object code
-	printf --\
+	printf -- \
 		'%s: Assembling object code...\n' \
 		"${RUNTIME_EXECUTABLE_NAME}"
 	gcc \
@@ -126,23 +126,25 @@ init(){
 		"${assembly_dir}/hello-c-world.s"
 
 	# Link executable
-	printf --\
-		'%s\n'\
-		'Linking executable...'
+	printf -- \
+		'%s: Linking executable...\n' \
+		"${RUNTIME_EXECUTABLE_NAME}"
 	gcc\
 		-o "${exe_dir}/hello-c-world"\
 		"${object_dir}/hello-c-world.o"
 
-	printf --\
-		'%s\n' \
-		'Building localization...'
+	printf -- \
+		'%s: Building localization...' \
+		"${RUNTIME_EXECUTABLE_NAME}"
 	"${gettext_dir}/build-localizations.bash"
 
-	printf --\
-		'Build finished.\n'
+	printf -- \
+		'%s: Build finished.\n' \
+		"${RUNTIME_EXECUTABLE_NAME}"
 	# COMPATIBILITY: --relative-to is not yet provided by the realpath command from Ubuntu 14.04
-	printf --\
-		'The built executable is at "%s".\n'\
+	printf -- \
+		'%s: The built executable is at "%s".\n' \
+		"${RUNTIME_EXECUTABLE_NAME}" \
 		"${exe_dir}"
 	exit 0
 }; declare -fr init
