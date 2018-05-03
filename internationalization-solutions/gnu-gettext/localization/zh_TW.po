@@ -48,5 +48,5 @@ msgstr "林博仁"
 msgid "Report bugs to <%s>.\n"
 msgstr ""
 "回報軟體缺陷至 <%s>。\n"
-"回報翻譯缺限至 <zh-l10n@linux.org.tw>。\n"
+"回報翻譯缺陷至 <zh-l10n@linux.org.tw>。\n"
 
