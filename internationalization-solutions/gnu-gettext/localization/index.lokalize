@@ -1,0 +1,11 @@
+"Content-Type: text/plain; charset=UTF-8\n"
+
+[General]
+AltDir=.
+GlossaryTbx=
+LangCode=zh_TW
+MailingList=chinese-l10n@googlegroups.com
+PoBaseDir=.
+PotBaseDir=.
+ProjectID=hello-c-world
+TargetLangCode=zh_TW
