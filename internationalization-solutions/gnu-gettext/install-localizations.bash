@@ -88,9 +88,8 @@ init(){
 	local \
 		locale_name \
 		locale_prefix
-	cd "${RUNTIME_EXECUTABLE_DIRECTORY}"
 
-	for mo_file in localization/*.mo; do
+	while IFS= read -d '' -r mo_file; do
 		locale_name="$(basename --suffix=.mo "${mo_file}")"
 		locale_prefix="${installation_prefix_dir}/share/locale/${locale_name}/LC_MESSAGES"
 		install \
@@ -101,7 +100,12 @@ init(){
 			--mode='u=rw,go=r' \
 			"${mo_file}" \
 			"${locale_prefix}"
-	done
+	done < <(
+		find \
+		"${RUNTIME_EXECUTABLE_DIRECTORY}/localization" \
+		-name '*.mo' \
+		-print0
+	)
 
 	exit 0
 }; declare -fr init
