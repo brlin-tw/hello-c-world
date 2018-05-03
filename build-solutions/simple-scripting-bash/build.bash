@@ -94,12 +94,14 @@ init(){
 			"${RUNTIME_EXECUTABLE_DIRECTORY}/${TO_PROJECT_ROOT_DIR}"
 	)"
 
-	declare -r exe_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/executables"
-	declare -r object_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/object-code"
-	declare -r src_dir="${project_root_dir}/source-code"
-	declare -r preprocessed_src_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/preprocessed-source-code"
-	declare -r assembly_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/assembly-code"
-	declare -r gettext_dir="${project_root_dir}/internationalization-solutions/gnu-gettext"
+	declare -r \
+		exe_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/executables" \
+		object_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/object-code" \
+		preprocessed_src_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/preprocessed-source-code" \
+		assembly_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/assembly-code"
+	declare -r \
+		src_dir="${project_root_dir}/source-code" \
+		gettext_dir="${project_root_dir}/internationalization-solutions/gnu-gettext"
 
 	# Preprocess source code
 	printf -- \
