@@ -1,0 +1,52 @@
+# Chinese(Taiwan) Localization for Hello C World
+# This file is put in the public domain.
+#
+# 林博仁(Buo-ren, Lin) <Buo.Ren.Lin@gmail.com>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: hello-c-world 0.0.0-git\n"
+"Report-Msgid-Bugs-To: https://github.com/Lin-Buo-Ren/hello-c-world/issues\n"
+"POT-Creation-Date: 2018-05-03 20:25+0800\n"
+"PO-Revision-Date: 2018-05-03 20:28+0800\n"
+"Last-Translator: 林博仁(Buo-ren, Lin) <Buo.Ren.Lin@gmail.com>\n"
+"Language-Team: Chinese <chinese-l10n@googlegroups.com>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: source-code/hello-c-world.c:39
+msgid "Hello C world!"
+msgstr "Ｃ程式設計世界你好！"
+
+#: source-code/hello-c-world.c:48
+#, c-format
+msgid "The \"%s\" application\n"
+msgstr "「%s」應用軟體\n"
+
+#: source-code/hello-c-world.c:51
+#, c-format
+msgid "Written by %s, et. al..\n"
+msgstr "由「%s」等人所著作。\n"
+
+#. TRANSLATORS: This is a proper name.  See the gettext
+#. manual, section Names.  Note this is actually a non-ASCII
+#. name: The first name, "博仁" is (with Unicode escapes)
+#. "\u535A\u4EC1" or (with HTML entities) "&#x535a;&#x4ec1;".
+#. Pronunciation is like "博(buo)-仁(ren), 林(Lin)".
+#: source-code/hello-c-world.c:57
+msgid "林博仁(Buo-ren, Lin)"
+msgstr "林博仁"
+
+#. TRANSLATORS: The placeholder indicates the bug-reporting address
+#. for this package.  Please add _another line_ saying
+#. "Report translation bugs to <...>\n" with the address for translation
+#. bugs (typically your translation team's web or email address).
+#: source-code/hello-c-world.c:64
+#, c-format
+msgid "Report bugs to <%s>.\n"
+msgstr ""
+"回報軟體缺陷至 <%s>。\n"
+"回報翻譯缺限至 <zh-l10n@linux.org.tw>。\n"
+
