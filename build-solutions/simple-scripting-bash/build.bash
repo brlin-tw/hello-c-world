@@ -94,21 +94,41 @@ init(){
 	declare -r exe_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/executables"
 	declare -r object_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/object-code"
 	declare -r src_dir="${project_root_dir}/source-code"
+	declare -r preprocessed_src_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/preprocessed-source-code"
+	declare -r assembly_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/assembly-code"
 	declare -r gettext_dir="${project_root_dir}/internationalization-solutions/gnu-gettext"
 
-	# Compile source code to object code
-	printf --\
-		'%s\n'\
-		'Compiling...'
-	gcc\
-		-c\
-		-o "${object_dir}/hello-c-world.o"\
+	# Preprocess source code
+	printf -- \
+		'%s: Preprocessing source code...\n' \
+		"${RUNTIME_EXECUTABLE_NAME}"
+	gcc \
+		-E \
+		-o "${preprocessed_src_dir}/hello-c-world.c" \
 		"${src_dir}/hello-c-world.c"
+
+	# Compile preprocessed source code to assembly code
+	printf --\
+		'%s: Compiling assembly code...\n' \
+		"${RUNTIME_EXECUTABLE_NAME}"
+	gcc \
+		-S \
+		-o "${assembly_dir}/hello-c-world.s" \
+		"${preprocessed_src_dir}/hello-c-world.c"
+
+	# Assemply assembly code to object code
+	printf --\
+		'%s: Assembling object code...\n' \
+		"${RUNTIME_EXECUTABLE_NAME}"
+	gcc \
+		-c \
+		-o "${object_dir}/hello-c-world.o" \
+		"${assembly_dir}/hello-c-world.s"
 
 	# Link executable
 	printf --\
 		'%s\n'\
-		'Linking...'
+		'Linking executable...'
 	gcc\
 		-o "${exe_dir}/hello-c-world"\
 		"${object_dir}/hello-c-world.o"
