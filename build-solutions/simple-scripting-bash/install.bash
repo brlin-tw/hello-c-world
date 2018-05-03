@@ -56,6 +56,7 @@ init(){
 	project_root_dir="$(realpath "${RUNTIME_EXECUTABLE_DIRECTORY}/${TO_PROJECT_ROOT_DIR}")"; local -r project_root_dir
 
 	declare -r exe_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/executables"
+	declare -r gettext_dir="${project_root_dir}/internationalization-solutions/gnu-gettext"
 
 	# Install executable
 	mkdir\
@@ -64,6 +65,10 @@ init(){
 	install\
 		"${exe_dir}/hello-c-world"\
 		"${installation_prefix}/bin"
+
+	# Install localization
+	"${gettext_dir}/install-localizations.bash" \
+		"${installation_prefix}"
 
 	# Install documents
 
