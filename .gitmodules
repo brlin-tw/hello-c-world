@@ -3,3 +3,6 @@
 	url = http://github.com/Lin-Buo-Ren/Utilities-for-Travis-CI
 	fetchRecurseSubmodules = no
 	ignore = all
+[submodule "libraries/whereami"]
+	path = libraries/whereami
+	url = https://github.com/gpakosz/whereami
