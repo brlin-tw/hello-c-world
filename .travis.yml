@@ -59,6 +59,7 @@ addons:
     # Software packages to be installed
     packages:
     - realpath
+    - tree
 
   # Hostname can be customized via hosts addon
   # https://docs.travis-ci.com/user/customizing-the-build/#Custom-Hostnames
@@ -89,6 +90,7 @@ before_script:
 script:
 - ./build-solutions/simple-scripting-bash/build.bash
 - ./build-solutions/simple-scripting-bash/install.bash --prefix install
+- tree install
 - ./install/bin/hello-c-world
 
 ### You can remove files that are not needed for caching here
