@@ -3,13 +3,3 @@
 	url = http://github.com/Lin-Buo-Ren/Utilities-for-Travis-CI
 	fetchRecurseSubmodules = no
 	ignore = all
-[submodule "linters/gnu-bash-automatic-checking-program-for-git-projects"]
-	path = linters/gnu-bash-automatic-checking-program-for-git-projects
-	url = https://github.com/Lin-Buo-Ren/GNU-Bash-Automatic-Checking-Program-for-Git-Projects
-	fetchRecurseSubmodules = no
-	ignore = all
-[submodule "developer-tools/git-precommit-hook-for-gnu-bash-projects"]
-	path = developer-tools/git-precommit-hook-for-gnu-bash-projects
-	url = https://github.com/Lin-Buo-Ren/Git_Pre-commit_Hook_for_GNU_Bash_Projects
-	fetchRecurseSubmodules = no
-	ignore = all

@@ -67,7 +67,7 @@ addons:
 
 ### You can run custom commands before the installation step
 before_install:
-- git submodule init continuous-integration/utilities-for-travis-ci linters/gnu-bash-automatic-checking-program-for-git-projects
+- git submodule init continuous-integration/utilities-for-travis-ci
 - git submodule update --depth=30
 
 ### Install/Setup any required dependencies used in continuous integration
@@ -78,15 +78,12 @@ install:
 - PATH="${HOME}/Software/shellcheck-stable:${PATH}"
 - shellcheck --version
 
-# Install yamllint
-- ./"continuous-integration/utilities-for-travis-ci/Setup yamllint in Ubuntu lesser than 16.04.bash"
-- PATH="${HOME}/.local/bin:${PATH}"
-- yamllint --version
+# Install pre-commit: A framework for managing and maintaining multi-language pre-commit hooks
+- pip install --user pre-commit
 
 ### You can run custom commands before the script/build step
 before_script:
-- ./"linters/gnu-bash-automatic-checking-program-for-git-projects/GNU Bash Automatic Checking Program for Git Projects.bash"
-- yamllint .travis.yml
+- git diff-tree -z --no-commit-id --name-only -r HEAD | xargs --null pre-commit run --files
 
 ### Put your build and test scripts here
 script:

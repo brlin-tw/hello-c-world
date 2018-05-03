@@ -17,7 +17,7 @@ declare\
 for required_command in \
 	basename \
 	dirname \
-	git \
+	pre-commit \
 	realpath; do
 	if ! command -v "${required_command}" &>/dev/null; then
 		runtime_dependency_checking_result=fail
@@ -28,8 +28,8 @@ for required_command in \
 			|realpath)
 				required_software='GNU Coreutils'
 				;;
-			git)
-				required_software='Git'
+			pre-commit)
+				required_software='pre-commit - A framework for managing and maintaining multi-language pre-commit hooks'
 				;;
 			*)
 				required_software="${required_command}"
@@ -93,12 +93,10 @@ init(){
 	cd "${project_root_directory}"
 
 	printf -- \
-		'%s: Setup Git submodules...\n' \
+		'%s: Setup pre-commit hooks\n' \
 		"${RUNTIME_EXECUTABLE_NAME}"
-	git submodule init \
-		'linters/gnu-bash-automatic-checking-program-for-git-projects' \
-		'developer-tools/git-precommit-hook-for-gnu-bash-projects'
-	git submodule update --depth=30
+	pre-commit install
+
 	exit 0
 }; declare -fr init
 
