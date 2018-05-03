@@ -85,6 +85,7 @@ init(){
 		exit 1
 	fi
 
+	local package_identification=hello-c-world
 	local \
 		locale_name \
 		locale_prefix
@@ -99,7 +100,7 @@ init(){
 			--verbose \
 			--mode='u=rw,go=r' \
 			"${mo_file}" \
-			"${locale_prefix}"
+			"${locale_prefix}/${package_identification}.mo"
 	done < <(
 		find \
 		"${RUNTIME_EXECUTABLE_DIRECTORY}/localization" \
