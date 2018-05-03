@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Script to build the software
-# 林博仁 © 2018
+declare -r PROGRAM_DESCRIPTION='Script to build the software'
+declare -r PROGRAM_COPYRIGHT='林博仁 © 2018'
 
 ## Makes debuggers' life easier - Unofficial Bash Strict Mode
 ## BASHDOC: Shell Builtin Commands - Modifying Shell Behavior - The Set Builtin
@@ -133,6 +133,11 @@ print_help(){
 	{
 		printf '# Help Information for %s #\n' \
 			"${RUNTIME_COMMANDLINE_BASECOMMAND}"
+		printf '## PROGRAM DESCRIPTION ##\n'
+		printf -- \
+			'%s\n\n' \
+			"${PROGRAM_DESCRIPTION}"
+
 		printf '## SYNOPSIS ##\n'
 		printf '* `"%s" _command-line_options_`\n\n' \
 			"${RUNTIME_COMMANDLINE_BASECOMMAND}"
@@ -143,6 +148,11 @@ print_help(){
 
 		printf '### `-d` / `--debug` ###\n'
 		printf 'Enable script debugging\n\n'
+
+		printf '## COPYRIGHT ##\n'
+		printf -- \
+			'%s\n\n' \
+			"${PROGRAM_COPYRIGHT}"
 	}
 }; declare -fr print_help;
 
