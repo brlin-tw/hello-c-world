@@ -89,7 +89,10 @@ init(){
 	# shellcheck source=/dev/null
 	source "${RUNTIME_EXECUTABLE_DIRECTORY}/TO_PROJECT_ROOT_DIR.source.bash"
 
-	declare project_root_dir; project_root_dir="$(realpath "${RUNTIME_EXECUTABLE_DIRECTORY}/${TO_PROJECT_ROOT_DIR}")"
+	declare project_root_dir; project_root_dir="$(
+		realpath \
+			"${RUNTIME_EXECUTABLE_DIRECTORY}/${TO_PROJECT_ROOT_DIR}"
+	)"
 
 	declare -r exe_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/executables"
 	declare -r object_dir="${RUNTIME_EXECUTABLE_DIRECTORY}/object-code"
