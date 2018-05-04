@@ -99,12 +99,12 @@ init(){
 
 	local \
 		gcc_opt_maybe_verbose='' \
-		build_l10n_maybe_verbose='' \
+		build_l10n_opt_maybe_verbose='' \
 		rsync_opt_maybe_verbose=''
 
 	if [ "${flag_verbose}" = true ]; then
 		gcc_opt_maybe_verbose=-v
-		build_l10n_maybe_verbose=--verbose
+		build_l10n_opt_maybe_verbose=--verbose
 		rsync_opt_maybe_verbose=--verbose
 	fi
 
@@ -203,7 +203,7 @@ init(){
 		'%s: Building localization...\n' \
 		"${RUNTIME_EXECUTABLE_NAME}"
 	"${gettext_dir}/build-localizations.bash" \
-		${build_l10n_maybe_verbose}
+		${build_l10n_opt_maybe_verbose}
 
 	printf -- \
 		'%s: Build finished.\n' \
