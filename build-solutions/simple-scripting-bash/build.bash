@@ -90,7 +90,7 @@ init(){
 
 	local gcc_opt_maybe_verbose=''
 	if [ "${flag_verbose}" = true ]; then
-		gcc_opt_maybe_verbose='-v'
+		gcc_opt_maybe_verbose=-v
 	fi
 
 	# Read where is the project's root directory
