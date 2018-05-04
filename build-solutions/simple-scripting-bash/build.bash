@@ -317,6 +317,9 @@ trap_errexit(){
 trap_exit(){
 	if [ -v workaround_make_temp_directory ] \
 		&& [ -n "${workaround_make_temp_directory}" ]; then
+		printf -- \
+			'%s: Removing temporary make workaround directory...\n' \
+			"${RUNTIME_EXECUTABLE_NAME}"
 		rm \
 			--recursive \
 			--force \
