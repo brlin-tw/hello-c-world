@@ -151,7 +151,7 @@ init(){
 		"${object_dir}/hello-c-world.o"
 
 	printf -- \
-		'%s: Building localization...' \
+		'%s: Building localization...\n' \
 		"${RUNTIME_EXECUTABLE_NAME}"
 	"${gettext_dir}/build-localizations.bash"
 
