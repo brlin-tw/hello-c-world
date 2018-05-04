@@ -18,18 +18,24 @@ for required_command in \
 	basename \
 	dirname \
 	gcc \
-	realpath; do
+	mktemp \
+	realpath \
+	rsync; do
 	if ! command -v "${required_command}" &>/dev/null; then
 		runtime_dependency_checking_result=fail
 
 		case "${required_command}" in
 			basename \
 			|dirname \
+			|mktemp \
 			|realpath)
 				required_software='GNU Coreutils'
 				;;
 			gcc)
 				required_software='GCC, the GNU Compiler Collection'
+				;;
+			rsync)
+				required_software='Rsync'
 				;;
 			*)
 				required_software="${required_command}"
@@ -71,6 +77,9 @@ if [ -v 'BASH_SOURCE[0]' ]; then
 fi
 declare -ar RUNTIME_COMMANDLINE_ARGUMENTS=("${@}")
 
+# NOTE: Must set global in order to clean it in EXIT trap
+declare workaround_make_temp_directory
+
 ## init function: entrypoint of main program
 ## This function is called near the end of the file,
 ## with the script's command-line parameters as arguments
@@ -90,11 +99,13 @@ init(){
 
 	local \
 		gcc_opt_maybe_verbose='' \
-		build_l10n_maybe_verbose=''
+		build_l10n_maybe_verbose='' \
+		rsync_opt_maybe_verbose=''
 
 	if [ "${flag_verbose}" = true ]; then
 		gcc_opt_maybe_verbose=-v
 		build_l10n_maybe_verbose=--verbose
+		rsync_opt_maybe_verbose=--verbose
 	fi
 
 	# Read where is the project's root directory
@@ -114,6 +125,9 @@ init(){
 	declare -r \
 		src_dir="${project_root_dir}/source-code" \
 		gettext_dir="${project_root_dir}/internationalization-solutions/gnu-gettext"
+	declare -r lib_dir="${project_root_dir}/libraries"
+	declare -r whereami_dir="${lib_dir}/whereami"
+	declare -r whereami_header_dir="${whereami_dir}/src"
 
 	# Preprocess source code
 	printf -- \
@@ -122,6 +136,7 @@ init(){
 	gcc \
 		${gcc_opt_maybe_verbose} \
 		-E \
+		-I "${whereami_header_dir}" \
 		-o "${preprocessed_src_dir}/hello-c-world.c" \
 		"${src_dir}/hello-c-world.c"
 
@@ -144,6 +159,36 @@ init(){
 		-c \
 		-o "${object_dir}/hello-c-world.o" \
 		"${assembly_dir}/hello-c-world.s"
+
+	printf -- \
+		'%s: Building runtime dependency: "Where Am I?" Library\n' \
+		"${RUNTIME_EXECUTABLE_NAME}"
+	workaround_make_temp_directory="$(
+		mktemp \
+			--tmpdir \
+			--directory \
+			"${RUNTIME_EXECUTABLE_NAME}.XXXXXX"
+	)"
+	# The trailing slash after whereami_dir means: copy the *contents* of the "${whereami_dir}"
+	# DOC: rsync(1) manpage > USAGE > "A trailing slash on the source..."
+	rsync \
+		${rsync_opt_maybe_verbose} \
+		--recursive \
+		"${whereami_dir}/" \
+		"${workaround_make_temp_directory}"
+	pushd \
+		"${workaround_make_temp_directory}" \
+		>/dev/null
+	make \
+		-C _gnu-make \
+		build-library
+	popd >/dev/null
+	rsync \
+		${rsync_opt_maybe_verbose} \
+		--recursive \
+		--ignore-existing \
+		"${workaround_make_temp_directory}/" \
+		"${whereami_dir}"
 
 	# Link executable
 	printf -- \
@@ -270,6 +315,13 @@ trap_errexit(){
 }; declare -fr trap_errexit; trap trap_errexit ERR
 
 trap_exit(){
+	if [ -v workaround_make_temp_directory ] \
+		&& [ -n "${workaround_make_temp_directory}" ]; then
+		rm \
+			--recursive \
+			--force \
+			"${workaround_make_temp_directory}"
+	fi
 	return 0
 }; declare -fr trap_exit; trap trap_exit EXIT
 
