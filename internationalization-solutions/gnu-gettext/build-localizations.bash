@@ -90,7 +90,8 @@ init(){
 		).mo"
 
 		printf -- \
-			'Building %s...\n' \
+			'%s: Building %s...\n' \
+			"${RUNTIME_EXECUTABLE_NAME}" \
 			"${po_file}"
 		msgfmt \
 			--check \
