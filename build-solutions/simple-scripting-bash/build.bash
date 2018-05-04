@@ -80,6 +80,9 @@ declare -ar RUNTIME_COMMANDLINE_ARGUMENTS=("${@}")
 # NOTE: Must set global in order to clean it in EXIT trap
 declare workaround_make_temp_directory
 
+# Referenced in EXIT trap, must be global
+declare rm_opt_maybe_verbose=''
+
 ## init function: entrypoint of main program
 ## This function is called near the end of the file,
 ## with the script's command-line parameters as arguments
@@ -106,6 +109,7 @@ init(){
 		gcc_opt_maybe_verbose=-v
 		build_l10n_opt_maybe_verbose=--verbose
 		rsync_opt_maybe_verbose=--verbose
+		rm_opt_maybe_verbose=--verbose
 	fi
 
 	# Read where is the project's root directory
@@ -321,6 +325,7 @@ trap_exit(){
 			'%s: Removing temporary make workaround directory...\n' \
 			"${RUNTIME_EXECUTABLE_NAME}"
 		rm \
+			${rm_opt_maybe_verbose} \
 			--recursive \
 			--force \
 			"${workaround_make_temp_directory}"
