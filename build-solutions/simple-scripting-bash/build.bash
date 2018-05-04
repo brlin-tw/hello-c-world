@@ -75,7 +75,10 @@ declare -ar RUNTIME_COMMANDLINE_ARGUMENTS=("${@}")
 ## This function is called near the end of the file,
 ## with the script's command-line parameters as arguments
 init(){
-	if ! process_commandline_arguments; then
+	local flag_verbose=false
+
+	if ! process_commandline_arguments \
+		flag_verbose; then
 		printf -- \
 			'Error: Invalid command-line parameters.\n' \
 			1>&2
@@ -83,6 +86,11 @@ init(){
 		printf '\n' # separate error message and help message
 		print_help
 		exit 1
+	fi
+
+	local gcc_opt_maybe_verbose=''
+	if [ "${flag_verbose}" = true ]; then
+		gcc_opt_maybe_verbose='-v'
 	fi
 
 	# Read where is the project's root directory
@@ -108,6 +116,7 @@ init(){
 		'%s: Preprocessing source code...\n' \
 		"${RUNTIME_EXECUTABLE_NAME}"
 	gcc \
+		${gcc_opt_maybe_verbose} \
 		-E \
 		-o "${preprocessed_src_dir}/hello-c-world.c" \
 		"${src_dir}/hello-c-world.c"
@@ -117,6 +126,7 @@ init(){
 		'%s: Compiling assembly code...\n' \
 		"${RUNTIME_EXECUTABLE_NAME}"
 	gcc \
+		${gcc_opt_maybe_verbose} \
 		-S \
 		-o "${assembly_dir}/hello-c-world.s" \
 		"${preprocessed_src_dir}/hello-c-world.c"
@@ -126,6 +136,7 @@ init(){
 		'%s: Assembling object code...\n' \
 		"${RUNTIME_EXECUTABLE_NAME}"
 	gcc \
+		${gcc_opt_maybe_verbose} \
 		-c \
 		-o "${object_dir}/hello-c-world.o" \
 		"${assembly_dir}/hello-c-world.s"
@@ -135,6 +146,7 @@ init(){
 		'%s: Linking executable...\n' \
 		"${RUNTIME_EXECUTABLE_NAME}"
 	gcc \
+		${gcc_opt_maybe_verbose} \
 		-o "${exe_dir}/hello-c-world" \
 		"${object_dir}/hello-c-world.o"
 
@@ -176,6 +188,9 @@ print_help(){
 		printf '### `-d` / `--debug` ###\n'
 		printf 'Enable script debugging\n\n'
 
+		printf '### `-v` / `--verbose` ###\n'
+		printf 'Print additional messages\n\n'
+
 		printf '## COPYRIGHT ##\n'
 		printf -- \
 			'%s\n\n' \
@@ -184,6 +199,8 @@ print_help(){
 }; declare -fr print_help;
 
 process_commandline_arguments() {
+	local -n flag_verbose_ref="${1}"
+
 	if [ "${#RUNTIME_COMMANDLINE_ARGUMENTS[@]}" -eq 0 ]; then
 		return 0
 	fi
@@ -207,6 +224,12 @@ process_commandline_arguments() {
 				--debug \
 				|-d)
 					enable_debug=Y
+					;;
+				--verbose \
+				|-v)
+					# Used indirectly, false positive
+					# shellcheck disable=SC2034
+					flag_verbose_ref=true
 					;;
 				*)
 					printf -- \
