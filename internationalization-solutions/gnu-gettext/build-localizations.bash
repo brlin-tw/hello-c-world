@@ -71,7 +71,10 @@ declare -ar RUNTIME_COMMANDLINE_ARGUMENTS=("${@}")
 ## This function is called near the end of the file,
 ## with the script's command-line parameters as arguments
 init(){
-	if ! process_commandline_arguments; then
+	local flag_verbose=false
+
+	if ! process_commandline_arguments \
+		flag_verbose; then
 		printf -- \
 			'Error: Invalid command-line parameters.\n' \
 			1>&2
@@ -79,6 +82,11 @@ init(){
 		printf '\n' # separate error message and help message
 		print_help
 		exit 1
+	fi
+
+	local msgfmt_maybe_verbose=''
+	if [ "${flag_verbose}" = true ]; then
+		msgfmt_maybe_verbose=--verbose
 	fi
 
 	pushd "${RUNTIME_EXECUTABLE_DIRECTORY}/localization" >/dev/null
@@ -95,7 +103,7 @@ init(){
 			"${po_file}"
 		msgfmt \
 			--check \
-			--verbose \
+			${msgfmt_maybe_verbose} \
 			--output-file="${mo_filename}" \
 			"${po_file}"
 	done
@@ -119,11 +127,16 @@ print_help(){
 
 		printf '### `-h` / `--help` ###\n'
 		printf 'Print this message\n\n'
+
+		printf '### `-v` / `--verbose` ###\n'
+		printf 'Print additional messages when possible\n\n'
 	}
 	return 0
 }; declare -fr print_help;
 
 process_commandline_arguments() {
+	local -n flag_verbose_ref="${1}"
+
 	if [ "${#RUNTIME_COMMANDLINE_ARGUMENTS[@]}" -eq 0 ]; then
 		return 0
 	fi
@@ -147,6 +160,12 @@ process_commandline_arguments() {
 				|-h)
 					print_help;
 					exit 0
+					;;
+				--verbose \
+				|-v)
+					# Used indirectly, false positive
+					# shellcheck disable=SC2034
+					flag_verbose_ref=true
 					;;
 				*)
 					printf -- \

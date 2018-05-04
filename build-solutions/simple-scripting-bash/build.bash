@@ -88,9 +88,13 @@ init(){
 		exit 1
 	fi
 
-	local gcc_opt_maybe_verbose=''
+	local \
+		gcc_opt_maybe_verbose='' \
+		build_l10n_maybe_verbose=''
+
 	if [ "${flag_verbose}" = true ]; then
 		gcc_opt_maybe_verbose=-v
+		build_l10n_maybe_verbose=--verbose
 	fi
 
 	# Read where is the project's root directory
@@ -153,7 +157,8 @@ init(){
 	printf -- \
 		'%s: Building localization...\n' \
 		"${RUNTIME_EXECUTABLE_NAME}"
-	"${gettext_dir}/build-localizations.bash"
+	"${gettext_dir}/build-localizations.bash" \
+		${build_l10n_maybe_verbose}
 
 	printf -- \
 		'%s: Build finished.\n' \
