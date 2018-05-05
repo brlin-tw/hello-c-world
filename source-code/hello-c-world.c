@@ -6,7 +6,7 @@
 /* Software global configuration */
 #include "config.h"
 
-/* For puts(3) */
+/* For input/output routines like puts(3) etc. */
 #include <stdio.h>
 
 /* For EXIT_SUCCESS constant */
