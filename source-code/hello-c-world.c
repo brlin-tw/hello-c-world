@@ -9,7 +9,7 @@
 /* For input/output routines like puts(3) etc. */
 #include <stdio.h>
 
-/* For EXIT_SUCCESS constant */
+/* For EXIT_* exit status constants */
 #include <stdlib.h>
 
 /* For internationalization support */
