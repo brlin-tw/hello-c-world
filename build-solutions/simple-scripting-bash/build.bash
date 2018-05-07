@@ -201,7 +201,8 @@ init(){
 	gcc \
 		${gcc_opt_maybe_verbose} \
 		-o "${exe_dir}/hello-c-world" \
-		"${object_dir}/hello-c-world.o"
+		"${object_dir}/hello-c-world.o" \
+		-ldl
 
 	printf -- \
 		'%s: Building localization...\n' \

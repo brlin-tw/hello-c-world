@@ -21,7 +21,56 @@
 /* For setlocale(3) */
 #include <locale.h>
 
+/* For support of finding the executable location(relocatable support) */
+#include <whereami.h>
+
+/* For library dynamic loading support */
+#include <dlfcn.h>
+
 int main(int argc, char** argv){
+	void *library_handle;
+	char *dynamic_load_error;
+	/* int WAI_PREFIX(getExecutablePath)(char* out, int capacity, int* dirname_length); */
+	int (*wai_getExecutablePath)(char*, int, int*);
+
+	char* executable_path = NULL;
+	int executable_path_length, executable_dirname_length;
+
+	library_handle = dlopen("library.so", RTLD_LAZY);
+	if (! library_handle){
+		fprintf(stderr, "%s\n", dlerror());
+		exit(EXIT_FAILURE);
+	}
+
+	/* Clear any existing error */
+	dlerror();
+
+	*(void **) (&wai_getExecutablePath) = dlsym(library_handle, "wai_getExecutablePath");
+
+	/* Relocatable support */
+	/* - Fetch required string length */
+	executable_path_length = wai_getExecutablePath(
+		NULL
+		, 0
+		, &executable_dirname_length
+	);
+	if(!executable_path_length){
+		fprintf(
+			stderr,
+			"FATAL: Failed to determine executable path length.\n"
+		);
+		return EXIT_FAILURE;
+	}
+	executable_path = (char*)malloc(executable_path_length + 1);
+	wai_getExecutablePath(
+		executable_path,
+		executable_path_length,
+		&executable_dirname_length
+	);
+	executable_path[executable_path_length] = '\0';
+
+	printf("Executable path: %s\n", executable_path);
+
 	/* Initializating I18N */
 	/* - Assign program locale */
 	setlocale (LC_ALL, "");
