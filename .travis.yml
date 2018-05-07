@@ -68,7 +68,7 @@ addons:
 
 ### You can run custom commands before the installation step
 before_install:
-- git submodule init continuous-integration/utilities-for-travis-ci
+- git submodule init continuous-integration/utilities-for-travis-ci libraries/whereami
 - git submodule update --depth=30
 
 ### Install/Setup any required dependencies used in continuous integration
